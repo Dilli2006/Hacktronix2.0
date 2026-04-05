@@ -1,6 +1,6 @@
 import emailjs from "emailjs-com";
 
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 export const sendConfirmationEmail = async (participantData) => {
   const templateParams = {
@@ -12,8 +12,8 @@ export const sendConfirmationEmail = async (participantData) => {
   };
 
   return emailjs.send(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     templateParams
   );
 };
