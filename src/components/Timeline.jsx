@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { CalendarDays } from "lucide-react";
 import GlassCard from "./ui/GlassCard";
 
 const timelineEvents = [
@@ -53,10 +52,7 @@ export default function Timeline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">
-            <CalendarDays className="w-4 h-4" />
-            Timeline
-          </span>
+
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-4">
             Event <span className="heading-gradient">Schedule</span>
           </h2>

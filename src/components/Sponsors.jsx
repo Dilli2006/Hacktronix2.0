@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 const sponsors = [
   {
@@ -72,10 +71,7 @@ export default function Sponsors() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <span className="section-badge mb-4">
-            <Sparkles className="h-4 w-4" />
-            Sponsors
-          </span>
+
           <h2 className="mt-4 text-3xl font-bold text-white md:text-5xl">
             Backed By Our <span className="heading-gradient">Partners</span>
           </h2>

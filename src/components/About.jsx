@@ -1,38 +1,6 @@
 import { motion } from "framer-motion";
-import { FileText, Play } from "lucide-react";
+import { Calendar, Clock, MapPin, Code, Users } from "lucide-react";
 import GlassCard from "./ui/GlassCard";
-
-function TerminalPlaceholder({ label, icon: Icon }) {
-  return (
-    <GlassCard className="aspect-video flex items-center justify-center p-8 relative overflow-hidden">
-      {/* Corner decorations */}
-      <div className="absolute top-3 left-3 w-2 h-2 border border-[var(--neon-cyan)] opacity-50" />
-      <div className="absolute top-3 right-3 w-2 h-2 border border-[var(--neon-cyan)] opacity-50" />
-      <div className="absolute bottom-3 left-3 w-2 h-2 border border-[var(--neon-cyan)] opacity-50" />
-      <div className="absolute bottom-3 right-3 w-2 h-2 border border-[var(--neon-cyan)] opacity-50" />
-
-      {/* Terminal header */}
-      <div className="absolute top-0 left-0 right-0 h-7 bg-[rgba(0,245,255,0.04)] border-b border-white/5 flex items-center px-4 gap-2">
-        <div className="w-2.5 h-2.5 rounded-full bg-[var(--neon-pink)] opacity-70" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[var(--neon-yellow)] opacity-70" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[var(--neon-green)] opacity-70" />
-        <span className="ml-3 font-mono text-[10px] text-[var(--neon-cyan)] opacity-50">// {label.toLowerCase().replace(/\s+/g, '_')}.media</span>
-      </div>
-
-      <div className="text-center mt-4">
-        <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center opacity-60">
-          <Icon className="w-8 h-8 text-white" />
-        </div>
-        <p className="font-mono text-sm text-[var(--neon-cyan)] opacity-40">{label}</p>
-        <div className="mt-2 flex items-center justify-center gap-1">
-          <span className="font-mono text-xs text-gray-500 opacity-60">[</span>
-          <span className="cursor-blink w-1.5 h-3 bg-[var(--neon-cyan)] opacity-40" />
-          <span className="font-mono text-xs text-gray-500 opacity-60">]</span>
-        </div>
-      </div>
-    </GlassCard>
-  );
-}
 
 export default function About() {
   return (
@@ -42,49 +10,86 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-6"
         >
-          <motion.span
-            whileHover={{ scale: 1.05 }}
-            className="section-badge mb-4 glitch-text cursor-pointer"
-            data-text="About"
-          >
-            <FileText className="w-4 h-4" />
-            About
-          </motion.span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-4">
-            About <span className="heading-gradient">HACKTRONIX</span>
-          </h2>
-          <p className="muted max-w-2xl mx-auto text-lg leading-relaxed">
-            HACKTRONIX 2.0 is a 24-hour hackathon bringing together the brightest minds in technology
-            to solve real-world problems through innovation and collaboration. Join us for an
-            unforgettable experience of creativity, coding, and competition.
-          </p>
+          <GlassCard className="p-6 md:p-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 text-center">
+              About <span className="heading-gradient">HACKTRONIX</span>
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-8 max-w-4xl">
+              HACKTRONIX 2.0 is a 24-hour hackathon bringing together the brightest minds in technology
+              to solve real-world problems through innovation and collaboration. Join us for an
+              unforgettable experience of creativity, coding, and competition.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-5 h-5 text-cyan-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Date</p>
+                  <p className="text-white font-medium">Coming Soon</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-purple-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Duration</p>
+                  <p className="text-white font-medium">24 Hours</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-pink-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Location</p>
+                  <p className="text-white font-medium">TBA</p>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <TerminalPlaceholder label="Event Image" icon={FileText} />
+            <GlassCard className="p-6 flex flex-col items-start h-full">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4">
+                <Code className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2">Innovative Challenges</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Tackle real-world problems with cutting-edge technology and creative solutions.
+              </p>
+            </GlassCard>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <TerminalPlaceholder label="Video" icon={Play} />
+            <GlassCard className="p-6 flex flex-col items-start h-full">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2">Networking Opportunities</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Connect with industry leaders, mentors, and fellow innovators.
+              </p>
+            </GlassCard>
           </motion.div>
         </div>
       </div>

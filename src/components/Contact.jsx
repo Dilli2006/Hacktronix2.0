@@ -1,6 +1,23 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, PhoneCall } from "lucide-react";
+import { MapPin, Phone, Mail, User } from "lucide-react";
 import GlassCard from "./ui/GlassCard";
+
+const contactPeople = [
+  {
+    name: "Rahul Sharma",
+    role: "Event Coordinator",
+    phone: "+91 98765 43210",
+    email: "rahul.sharma@hacktronix.in",
+    gradient: "from-blue-500 to-cyan-400",
+  },
+  {
+    name: "Priya Verma",
+    role: "Technical Lead",
+    phone: "+91 87654 32109",
+    email: "priya.verma@hacktronix.in",
+    gradient: "from-purple-500 to-pink-400",
+  },
+];
 
 const contactInfo = [
   {
@@ -8,18 +25,6 @@ const contactInfo = [
     value: "KIET Group of Institutions, Ghaziabad, UP",
     icon: MapPin,
     gradient: "from-red-500 to-orange-400",
-  },
-  {
-    label: "Phone",
-    value: "+91 98765 43210",
-    icon: Phone,
-    gradient: "from-green-500 to-emerald-400",
-  },
-  {
-    label: "Email",
-    value: "hacktronix@kiet.edu",
-    icon: Mail,
-    gradient: "from-blue-500 to-cyan-400",
   },
 ];
 
@@ -37,10 +42,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">
-            <PhoneCall className="w-4 h-4" />
-            Contact
-          </span>
+
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-4">
             Get in <span className="heading-gradient">Touch</span>
           </h2>
@@ -55,15 +57,54 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-3"
+            className="space-y-4"
           >
+            {contactPeople.map((person, idx) => (
+              <motion.div
+                key={person.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group relative"
+              >
+                <GlassCard className="p-5 md:p-6 rounded-sm" interactive>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className="w-12 h-12 rounded-sm bg-gradient-to-r flex items-center justify-center text-white shadow-lg flex-shrink-0 group-hover:shadow-[0_0_16px_rgba(0,245,255,0.15)] transition-shadow duration-300"
+                      style={{ background: `linear-gradient(135deg, ${person.gradient.replace("from-", "")})` }}
+                    >
+                      <User className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-base font-mono">{person.name}</p>
+                      <p className="text-gray-400 text-sm">{person.role}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-3 ml-16">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                      <a href={`tel:${person.phone}`} className="text-white font-mono text-sm hover:text-cyan-400 transition-colors">
+                        {person.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                      <a href={`mailto:${person.email}`} className="text-white font-mono text-sm hover:text-cyan-400 transition-colors truncate">
+                        {person.email}
+                      </a>
+                    </div>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
             {contactInfo.map((info, idx) => (
               <motion.div
                 key={info.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: (contactPeople.length + idx) * 0.1 }}
                 className="group relative"
               >
                 <GlassCard className="p-5 md:p-6 flex items-center gap-4 rounded-sm" interactive>

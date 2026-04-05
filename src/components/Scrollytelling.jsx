@@ -95,13 +95,7 @@ export default function Scrollytelling() {
       <div className="absolute inset-0 pointer-events-none" style={{ background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px)" }} />
 
       <div className="relative z-10 h-screen max-w-4xl mx-auto px-4 pt-24 md:pt-28 pb-10 flex flex-col items-center justify-start text-center">
-        <div
-          ref={badgeRef}
-          className="section-badge mb-8 md:mb-10 mx-auto shrink-0"
-        >
-          <Zap className="w-4 h-4" />
-          The Experience
-        </div>
+
 
         <div className="relative w-full flex-1 min-h-0 flex items-start justify-center pt-4 md:pt-6">
           {scrollySections.map((item, index) => {

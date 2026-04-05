@@ -152,17 +152,15 @@ export default function Hero({ onRegisterClick }) {
             <span className="section-badge border-glow-cyan">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--neon-cyan)] animate-pulse shadow-[0_0_6px_var(--neon-cyan)]" />
               <span className="font-mono">REGISTRATION OPEN</span>
-              <span className="opacity-40">//</span>
-              <span className="font-mono text-[var(--neon-cyan)]">KIET GROUP OF INSTITUTIONS</span>
             </span>
           </motion.div>
 
           {/* Main Title */}
-          <h1 ref={titleRef} className="mb-6 crt-flicker">
-            <span className="block text-5xl md:text-8xl font-extrabold text-white tracking-wider" style={{ fontFamily: "'Star Jedi', sans-serif" }}>
+          <h1 ref={titleRef} className="mb-6 crt-flicker flex justify-center items-baseline gap-6">
+            <span className="text-5xl md:text-8xl font-extrabold text-white tracking-wider" style={{ fontFamily: "'Star Jedi', sans-serif" }}>
               HAcktronix
             </span>
-            <span className="block text-3xl md:text-6xl text-[var(--neon-cyan)] tracking-wider mt-2" style={{ fontFamily: "'Star Jedi', sans-serif", textShadow: "0 0 12px rgba(0,245,255,0.6), 0 0 24px rgba(0,245,255,0.3)" }}>
+            <span className="text-5xl md:text-8xl text-[var(--neon-cyan)] tracking-wider" style={{ fontFamily: "'Star Jedi', sans-serif", textShadow: "0 0 12px rgba(0,245,255,0.6), 0 0 24px rgba(0,245,255,0.3)" }}>
               2.0
             </span>
           </h1>
@@ -174,8 +172,7 @@ export default function Hero({ onRegisterClick }) {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            <span className="font-mono text-[var(--neon-cyan)] opacity-70">$</span> The Ultimate Innovation Hackathon
-            <span className="muted-2 text-sm block mt-1">// 24hrs &middot; 5 domains &middot; infinite possibilities<span className="cursor-blink" /></span>
+            A 24-hour hackathon exploring the upside-down world of technology
           </motion.p>
 
           {/* CTA Buttons */}

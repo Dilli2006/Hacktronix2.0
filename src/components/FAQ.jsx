@@ -83,9 +83,7 @@ export default function FAQ({ isFullPage = false }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <span className="section-badge mb-4">
-            FAQ
-          </span>
+
           <h2 className="mb-4 text-center text-3xl font-black tracking-tight text-white md:text-5xl">
             Frequently Asked <span className="heading-gradient">Questions</span>
           </h2>

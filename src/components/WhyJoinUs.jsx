@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Network, Lightbulb, Code2, Users, Award, Layers, Clock, TrendingUp } from "lucide-react";
+import { Network, Lightbulb, Code2, Users, Award, Layers, Clock } from "lucide-react";
 
 const features = [
   {
@@ -130,10 +130,7 @@ export default function WhyJoinUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">
-            <TrendingUp className="w-4 h-4" />
-            Why Join Us
-          </span>
+
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-4">
             Level Up Your <span className="heading-gradient">Skills</span>
           </h2>

@@ -8,16 +8,16 @@ const prizes = [
     category: "Software",
     gradient: "from-blue-500 to-cyan-400",
     items: [
-      { rank: "1st", amount: "₹50,000", icon: Trophy },
-      { rank: "2nd", amount: "₹30,000", icon: Medal },
+      { rank: "1st", amount: "₹15,000", icon: Trophy },
+      { rank: "2nd", amount: "₹10,000", icon: Medal },
     ],
   },
   {
     category: "Hardware",
     gradient: "from-purple-500 to-pink-400",
     items: [
-      { rank: "1st", amount: "₹40,000", icon: Trophy },
-      { rank: "2nd", amount: "₹20,000", icon: Medal },
+      { rank: "1st", amount: "₹15,000", icon: Trophy },
+      { rank: "2nd", amount: "₹10,000", icon: Medal },
     ],
   },
 ];
@@ -85,12 +85,12 @@ function PrizeCard({ rank, amount, icon: Icon, gradient, index }) {
                 className="rounded-sm px-3 py-1 text-[10px] font-bold font-mono tracking-wider uppercase"
                 style={{ background: "linear-gradient(90deg, var(--neon-yellow), #ffe600)", color: "#000", boxShadow: "0 0 12px rgba(255,230,0,0.4)" }}
               >
-                TOP PRIZE
+                WINNER
               </span>
             )}
             {!isFirst && (
               <span className="sw-label-warning">
-                {rank === "1st" ? "WINNER" : "RUNNER-UP"}
+                {rank === "2nd" ? "RUNNER-UP" : rank}
               </span>
             )}
           </div>
@@ -118,10 +118,7 @@ export default function Prizes() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">
-            <Trophy className="w-4 h-4" />
-            Prize Pool
-          </span>
+
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-4">
             Win Exciting <span className="heading-gradient">Rewards</span>
           </h2>
